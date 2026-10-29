@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrderFlow | Order Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Page Header -->
+    <header>
+        <h1>OrderFlow</h1>
+        <p>Simple order management for growing businesses.</p>
+    </header>
+
+    <main>
+
+        <!-- Create New Order -->
+        <section>
+            <h2>Create a New Order</h2>
+
+            <form id="orderForm">
+
+                <div class="form-group">
+                    <label for="customerName">Customer Name</label>
+                    <input
+                        type="text"
+                        id="customerName"
+                        placeholder="Enter customer name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input
+                        type="text"
+                        id="productName"
+                        placeholder="Enter product name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input
+                        type="number"
+                        id="quantity"
+                        min="1"
+                        value="1"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Price per Item (KSh)</label>
+                    <input
+                        type="number"
+                        id="price"
+                        min="0"
+                        step="0.01"
+                        placeholder="0.00"
+                        required
+                    >
+                </div>
+
+                <button type="submit">Add Order</button>
+
+            </form>
+        </section>
+
+        <!-- Order Summary -->
+        <section>
+            <h2>Order Summary</h2>
+
+            <div class="table-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Customer Name</th>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Price (KSh)</th>
+                            <th>Total (KSh)</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="orderList">
+                        <tr>
+                            <td colspan="7" class="empty-message">
+                                No orders added yet.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="total-amount">
+                    <strong>Total Amount:</strong>
+                    <strong id="grandTotal">KSh 0.00</strong>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
